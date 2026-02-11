@@ -14,14 +14,6 @@ Pivot Real Estate Development specializes in acquiring, building, and delivering
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
 - **Interactive UI**: Smooth animations and transitions using Tailwind CSS and shadcn/ui.
 
-## Tech Stack
-
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-
 ## Getting Started
 
 ### Prerequisites
