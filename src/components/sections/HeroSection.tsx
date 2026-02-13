@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100vh] flex items-center overflow-hidden"
+      className="relative min-h-[90vh] flex items-center overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -31,59 +31,53 @@ const HeroSection = () => {
       <div className="absolute bottom-48 left-16 w-0 h-0 border-l-[45px] border-l-transparent border-t-[75px] border-t-primary border-r-[45px] border-r-transparent opacity-70 hidden lg:block" />
 
       {/* Content */}
-      <div className="relative section-container py-40 lg:py-48">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="animate-fade-in mb-10">
-            <span className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/20 backdrop-blur-sm text-primary-foreground text-sm font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
-              Luxury Eco-Friendly Living
-            </span>
+      <div className="relative section-container py-20 lg:py-24 lg:max-w-[90%] lg:mx-auto">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
+          {/* Left Column - Main Content */}
+          <div className="flex-1 max-w-3xl">
+            
+
+            {/* Heading */}
+            <h1 className="animate-slide-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-[1.2] mb-6">
+              Building Dreams,
+              <span className="block text-primary mt-1">Delivering Excellence</span>
+            </h1>
+
+            {/* Description */}
+            <p className="animate-slide-up delay-100 text-lg md:text-xl text-primary-foreground/85 mb-8 max-w-xl leading-relaxed">
+              Pivot Real Estate Development specializes in acquiring, building, and delivering luxurious, eco-friendly living spaces that combine elegance, innovation, and environmental responsibility.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="animate-slide-up delay-200 flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" className="group text-base px-8 py-5" asChild>
+                <Link href="/properties">
+                  Explore Properties
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button variant="hero-outline" size="lg" className="text-base px-8 py-5" asChild>
+                <Link href="/about">Learn More</Link>
+              </Button>
+            </div>
           </div>
 
-          {/* Heading */}
-          <h1 className="animate-slide-up text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground leading-[1.1] mb-10">
-            Building Dreams,
-            <span className="block text-primary mt-2">Delivering Excellence</span>
-          </h1>
-
-          {/* Description */}
-          <p className="animate-slide-up delay-100 text-xl md:text-2xl text-primary-foreground/85 mb-14 max-w-2xl leading-relaxed">
-            Pivot Real Estate Development specializes in acquiring, building, and delivering luxurious, eco-friendly living spaces that combine elegance, innovation, and environmental responsibility.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="animate-slide-up delay-200 flex flex-col sm:flex-row gap-5 mb-20">
-            <Button variant="hero" size="xl" className="group text-lg px-10 py-6" asChild>
-              <Link href="/properties">
-                Explore Properties
-                <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button variant="hero-outline" size="xl" className="text-lg px-10 py-6" asChild>
-              <Link href="/about">Learn More</Link>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="animate-slide-up delay-300 grid grid-cols-3 gap-8 md:gap-16 pt-10 border-t border-primary-foreground/20">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center md:text-left">
-                <stat.icon className="h-8 w-8 text-primary mb-4 mx-auto md:mx-0" />
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-2">
-                  {stat.value}
+          {/* Right Column - Stats */}
+          <div className="animate-slide-up delay-300 lg:w-80">
+            <div className="space-y-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <stat.icon className="h-8 w-8 text-primary shrink-0" />
+                  <div>
+                    <div className="text-2xl md:text-3xl font-bold text-primary-foreground">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-primary-foreground/70">{stat.label}</div>
+                  </div>
                 </div>
-                <div className="text-sm md:text-base text-primary-foreground/70">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-7 h-12 rounded-full border-2 border-primary-foreground/50 flex justify-center pt-3">
-          <div className="w-1.5 h-3.5 bg-primary-foreground/50 rounded-full" />
         </div>
       </div>
     </section>
@@ -91,4 +85,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
